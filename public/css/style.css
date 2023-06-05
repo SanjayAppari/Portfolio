@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-color: black;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+a{
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+nav{
+    height: 7vh;
+    position: fixed;
+    top:0px;
+    width: 100%;
+    z-index: 10000;
+}
+nav .navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    color: white;
+}
+nav ul li a:after{
+    content: '';
+    background-color: aqua;
+    height: 3px;
+    width: 0;
+    margin: auto;
+    border-radius: 10px;
+    display: block;
+}
+nav ul li a:hover::after{
+    width: 100%;
+    transition: width 0.3s linear;
+}
+
+.mybtn{
+    display: block;
+    height: 50px;
+    width: 140px;
+    border: 2px solid aqua;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.mybtn:hover{
+    border: 2px solid white;
+}
+.home{
+    height: 100vh;
+    /* border: 1px solid red; */
+    background-image: url('/images/homebg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home .content{
+    /* border: 1px solid red; */
+    /* height: 300px; */
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.home .content .text{
+    position: relative;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.home .content .buttons{
+    position: relative;
+    width: 100%;
+    /* border: 1px solid green; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.about {
+    /* border: 1px solid red; */
+    min-height: 100vh;
+    background-color: rgb(0, 0, 45);
+    padding-top: 10vh;
+    padding-bottom: 30px;
+}
+
+.about .content{
+    padding-top: 30px;
+    /* border: 1px solid red; */
+    min-height: 86vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about .content .logo{
+    position: relative;
+    width: 350px;
+    margin-top: -120px;
+    /* border: 1px solid red; */
+    height: 350px;
+    padding: 40px;
+    /* background-color: white; */
+    border-radius: 50%;
+}
+
+.about .content .logo img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.about .content .text{
+    color: black;
+    margin-top: -80px;
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: 200px; */
+    /* border: 1px solid red; */
+}
+.about .content .text .skills{
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+.projects{
+    min-height: 100vh;
+    background-color: rgb(4, 4, 64);
+    padding-top: 10vh;
+    padding-bottom: 50px;
+}
+
+.projects .content{
+    padding: 10px;
+    max-width: 1100px;
+    margin:0 auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    /* border: 1px solid red; */
+    margin-top: 30px;
+}
+
+.projects .content div .p-link{
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.projects .content .v-stretch{
+    grid-row: span 2;
+}
+
+.projects .content .h-stretch{
+    grid-column: span 2;
+}
+.projects .content .big-stretch{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.projects .content div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border: 1px solid green; */
+}
+
+.projects .content div .p-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top:-100%;
+    left: 0;
+    /* border: 1px solid red; */
+    /* z-index: 10000000 ; */
+     background-color:rgba(0, 0, 0, 0.742); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s; 
+    color: aqua;
+}
+.projects .content .p-content:hover{
+    opacity: 1;
+}
+.projects .content .p-content h1,
+.projects .content .p-content h5,
+.projects .content .p-content h4{
+    animation: hover 2s infinite;
+  }
+  
+  @keyframes hover {
+    0% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+.contact{
+    /* height: 100vh; */
+    min-height: 100vh;
+    background-color: rgb(0, 0, 45);
+    padding-top: 10vh;
+    padding-bottom: 50px;
+}
+.contact .content{
+    margin-top: 100px;
+}
+.contact .content .text{
+    /* border: 1px solid re d; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .content .blocks{
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.contact .content .blocks .inside{
+    margin: 10px;
+    /* border: 1px solid green; */
+    height: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+.contact .content .blocks .inside .head{
+    width: 210px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 65px;
+    /* border: 1px solid red; */
+}
+.contact .content .blocks .inside .body{
+    width: 210px;
+    height: 145px;
+    /* border: 1px solid red; */
+}
+.contact .content .blocks .inside i{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.contact .content .blocks .inside h5{
+    /* font-size: 40px; */
+    color: aqua;
+}
+.contact .content  .icons{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.contact .content  .icons i{
+    display: block;
+    font-size: 35px;
+    color: aqua;
+    margin: 10px;
+}
+
+
+
+
+.more-about{
+    /* border: 1px solid red;. */
+    background-color: rgb(24, 24, 74);
+    min-height: 100vh;
+    padding-top: 10vh;
+    padding-bottom: 50px;
+}
+
+.more-about .content{
+    /* border: 1px solid red; */
+    padding-top: 10px;;
+}
+.more-about .content .profiles{
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+.more-about .content .profiles .profile{
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.more-about .content .profiles .profile .each{
+    height: 225px;
+    width: 200px;
+    margin: 10px;
+    /* border: 1px solid blue; */
+    padding: 10px;
+}
+
+.more-about .content .profiles .profile .each .logo{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    /* border: 1px solid red; */
+}
+.more-about .content .profiles .profile .each .logo img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.more-about .content .profiles .profile .each .text{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+
+.more-about .content .achievements{
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+.more-about .content .achievements .achieved{
+    font-size: 20px;
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:800px){
+    .about .content .logo{
+        margin-top: 0px;
+    }
+} 
+@media (max-width:500px) {
+    nav ul li a:after{
+        background-color: transparent;
+    }
+    nav ul li a:hover::after{
+        width: 0%;
+    }
+    .mybtn{
+        width: 120px;
+        font-size: 12px;
+    }
+    .projects .content .h-stretch{
+        grid-column: span 1;
+    }
+    .projects .content .v-stretch{
+        grid-row: span 1;
+    }
+    
+    .projects .content .big-stretch{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
